@@ -1,11 +1,17 @@
+import Logo from "../imgs/logofarola.jpg"
+import Carrito from "./Carrito"
+
+
+/* -- - - - - NAV BAR  - - -- - -*/
 
 function NavBar() { //los componentes se usan con PascalCase.
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                    <img src="../imgs/logofarola.jpg" alt="" width="30" height="24"/>
+                        
+                    <img src={Logo} alt="" width="30" height="24"/>
                     La Farola
                     </a>
 
@@ -23,10 +29,8 @@ function NavBar() { //los componentes se usan con PascalCase.
                         </ul>
                     </div>
 
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-outline-primary" type="submit">Search</button>
-                    </form>
+                    <Carrito></Carrito>
+
                 </div>
             </nav>
         </div>
