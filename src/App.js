@@ -1,12 +1,14 @@
 import NavBar from './components/NavBar';
 import ShopNull from './components/ShopNull';
-import {ItemListContainer} from './components/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ItemCount from './components/ItemCount';
 
 function App() {
 
   let sloganB = "Streetwear sin género!"
-  let subSloganB = "estamos en contrucción de la mejor tienda para vos."
+
 
   return (
     <div>
@@ -15,9 +17,9 @@ function App() {
 
       <div className="container-fluid text-center">
 
-        <ItemListContainer sloganA={sloganB} subSloganA={subSloganB} />
+        <ItemListContainer sloganA={sloganB}/>
+        
 
-        <button className="btn btn-success my-5" onClick={ShopNull}>GO SHOPPING</button>
       </div>
 
     </div>

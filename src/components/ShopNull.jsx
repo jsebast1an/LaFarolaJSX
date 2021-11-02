@@ -1,7 +1,7 @@
-import React from 'react'
+
 
 const ShopNull = () => {
-    alert("Página en construcción")
+    alert("Agregaste {stock} al carrito")
 }
 
 export default ShopNull
