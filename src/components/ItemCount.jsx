@@ -23,7 +23,7 @@ function ItemCount({nombreItem, precioItem, stock, initial}) {
         <div>
 
             <div>
-                <img src={imgItem} style={{width: 300}}/>
+                <img src={imgItem} style={{width: 300}} alt=""/>
                 <h3>{nombreItem}</h3>
                 <h3>{precioItem}</h3>
             </div>

@@ -1,9 +1,7 @@
 import NavBar from './components/NavBar';
-import ShopNull from './components/ShopNull';
 import ItemListContainer from './components/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ItemCount from './components/ItemCount';
 
 function App() {
 

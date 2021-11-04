@@ -8,24 +8,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 function NavBar() { //los componentes se usan con PascalCase.
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
-                <div class="container">
-                    <a class="navbar-brand" href="#">
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-between">
+                <div className="container">
+                    <a className="navbar-brand" href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
                         
                     <img src={Logo} alt="" width="30" height="24"/>
                     La Farola
                     </a>
 
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Tienda</a>
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">Tienda</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                            <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">Contacto</a>
                             </li>
 
                             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
