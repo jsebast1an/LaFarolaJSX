@@ -1,8 +1,7 @@
 import Button from 'react-bootstrap/Button';
-import imgItem from "../imgs/Adidas.jpg";
 import {useState} from "react";
 
-function ItemCount({nombreItem, precioItem, stock, initial}) {
+function ItemCount({stock, initial}) {
 
     const [span, setSpan] = useState(initial)
 
@@ -22,17 +21,11 @@ function ItemCount({nombreItem, precioItem, stock, initial}) {
     return (
         <div>
 
-            <div>
-                <img src={imgItem} style={{width: 300}} alt=""/>
-                <h3>{nombreItem}</h3>
-                <h3>{precioItem}</h3>
-            </div>
-
             <div className="d-grid gap-2">
                 <Button variant="primary" size="lg" onClick={sumar}>            
                     +
                 </Button>
-                    <span>{span}</span>
+                    <span className="border border-1" style={{borderRadius: 4}}>{span}</span>
                 <Button variant="secondary" size="lg" onClick={restar}>
                     -
                 </Button>

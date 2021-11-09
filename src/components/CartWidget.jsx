@@ -1,8 +1,8 @@
 
 
-/* - - ----- - CARRITO COMPRAS - ------ */
+/* - - ----- - CardWidget COMPRAS - ------ */
 
-function Carrito() {
+function CardWidget() {
     return (
         <div>
             <button class="btn btn-secondary">
@@ -15,4 +15,4 @@ function Carrito() {
     )
 }
 
-export default Carrito
+export default CardWidget

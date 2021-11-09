@@ -1,29 +1,34 @@
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList/ItemList";
+import Spinner from "react-bootstrap/Spinner"
 import { useEffect, useState } from "react";
-import { productos } from "./useFetch";
-import { useFetch } from "./useFetch";
+import { productos } from "./getItems";
+import { getItems } from "./getItems";
 
 export const ItemListContainer = ({sloganA}) => {
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        useFetch
+        getItems
         .then(res => {setProducts(res)})
         .catch(err => console.log(err))
-        .finally(() => console.log("listo"))
+        .finally(() => setLoading(false))
     }, [])
 
     console.log(products)
 
     return (
-        <div>
-            <h1>{sloganA}</h1>
-            <ItemList productosA={productos}/>
-            <ItemCount nombreItem="ADIDAS FORUM MID CREAM/WHITE" precioItem="3000 ARS" initial={1} stock={5}/>
+        <>
             
-        </div>
+            {loading ? <div className="py-5">
+                            <h2><Spinner animation="border" variant="success" />Cargando</h2>
+                        </div> :            
+                        <div>
+                            <h1>{sloganA}</h1><ItemList productosA={productos}/>
+                        </div>}
+            
+        </>
     )
 }
 

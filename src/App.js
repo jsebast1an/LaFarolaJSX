@@ -1,5 +1,7 @@
-import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import BarNav from './components/NavBar/BarNav';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -9,9 +11,9 @@ function App() {
 
 
   return (
-    <div>
-
-      <NavBar/>
+    <div> {/* body */}
+      
+      <BarNav/>
 
       <div className="container-fluid text-center">
 
