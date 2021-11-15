@@ -1,30 +1,47 @@
-import Form from "react-bootstrap/Form"
+import Card from "react-bootstrap/Card"
+import ListGroupItem from "react-bootstrap/ListGroupItem"
+import ListGroup from "react-bootstrap/ListGroup"
+import Accordion from "react-bootstrap/Accordion"
 import ItemCount from "../ItemCount"
 
-function ItemDetail() {
-    return (
-        <>  
-            <div>
-            <Form.Label htmlFor="exampleColorInput">Choose color</Form.Label>
-            <Form.Control
-                type="color"
-                id="exampleColorInput"
-                defaultValue="#563d7c"
-                title="Choose your color"/>
-            </div>
-            <div className="py-2">
-            <Form.Select className="me-sm-2" id="inlineFormCustomSelect">
-                <option value="0">Talle...</option>
-                <option value="1">S</option>
-                <option value="2">M</option>
-                <option value="3">L</option>
-            </Form.Select>
-            </div>
+function ItemDetail({items}) {
 
-            <div className="py-3"> 
-                <ItemCount stock={5} initial={1} className=""/>
-            </div>
-        </>
+    return (
+        <div className="container-sm py-3  text-center d-flex justify-content-evenly flex-wrap"  style={{borderRadius: 14}}>    
+            <Card className="m-3" data-aos="flip-right" style={{ width: '23rem' }}>
+                <Card.Img variant="top" src={items.img} />
+                <Card.Body>
+                    <Card.Title as="h3">{items.nombre}</Card.Title>
+                    <Card.Text>
+                        {items.detail}
+                    </Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                    <ListGroupItem><Card.Title >Precio: {items.precio} ARS </Card.Title></ListGroupItem>
+                    <ListGroupItem>Estado: {items.year}</ListGroupItem>
+                    <ListGroupItem>Talle: {38}</ListGroupItem>
+                </ListGroup>
+            </Card>
+
+            <Card className="m-3" data-aos="flip-left"  style={{ width: '23rem' }}>
+                <Card.Header as="h3">DETALLES</Card.Header>
+
+                <Card.Body>
+                <Accordion className="my-3">
+                    <Accordion.Item eventKey="0">
+                        <Accordion.Header>Tabla talles</Accordion.Header>
+                        <Accordion.Body>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    </Accordion>
+                    
+
+                    <Card.Text><ItemCount stock={items.stock} initial={1} /></Card.Text>
+                </Card.Body>
+            </Card>
+        </div>
     )
 }
 

@@ -1,19 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
-import Accordion from "react-bootstrap/Accordion"
+import { useParams} from "react-router-dom"
+import { getItems } from '../getItems';
 
 function ItemDetailContainer() {
+    const [item, setItem] = useState({})
+
+    const { id } = useParams();
+
+    useEffect(() => {
+            getItems
+            .then(res => setItem(res.find(prod => prod.id === parseInt(id) ) ))
+            .catch(err => console.log(err))
+            .finally(res => console.log(res +" listo"))
+    }, [id])
+
     return (
-        <div>
-                <Accordion>
-                            <Accordion.Item eventKey="0">
-                                <Accordion.Header>Detalles del producto</Accordion.Header>
-                                <Accordion.Body>                             
-                                    <ItemDetail></ItemDetail>
-                                </Accordion.Body>
-                            </Accordion.Item>
-                </Accordion> 
-        </div>
+        <>
+                    <ItemDetail 
+                        items={item}
+                    />
+        </>
+
     )
 }
 

@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
+import {Link} from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 import './Items.css';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 function Items({prod}) {
 
@@ -10,15 +11,12 @@ function Items({prod}) {
                 <Card.Img variant="top" src={prod.img} alt="" width="400" height="300" />
 
                 <Card.Body>
-                    <Card.Title><h2>{prod.nombre}</h2></Card.Title>
-                    <Card.Text>
-                        <h4>{prod.year}</h4>
-                        <h5>Precio: {prod.precio} ARS</h5>
-                        
-                        <ItemDetailContainer/>
-
-                    </Card.Text>
-                    
+                    <Card.Title>{prod.nombre}</Card.Title>
+                    <Card.Text>{prod.year}</Card.Text>
+                    <Card.Text>{prod.precio}</Card.Text>
+                    <Link to={`/detail/${prod.id}`}>
+                        <Button variant="primary">Detalles del producto</Button>
+                    </Link>
                 </Card.Body>
             </Card>
 

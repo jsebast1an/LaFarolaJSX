@@ -2,11 +2,17 @@ import React from 'react'
 import Items from '../Items/Items'
 import './ItemList.css';
 
-function ItemList({productosA}) {
-
+function ItemList({productos}) {
     return (
         <div className="flexItems">
-                {productosA.map( prod => <Items  key={prod.id} prod={prod} />)}
+                {
+                    productos.map( prod => 
+                        <Items 
+                            key={prod.id} 
+                            prod={prod} 
+                        />
+                    )
+                }
         </div>
     )
 }

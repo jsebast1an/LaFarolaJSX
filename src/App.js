@@ -1,29 +1,43 @@
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import BarNav from './components/NavBar/BarNav';
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Slider from './components/Bootstrap/Slider';
+import Cart from './components/NavBar/Cart';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
-  let sloganB = "Streetwear sin género!"
-
-
+  let sloganB = <Slider />
+  
   return (
-    <div> {/* body */}
-      
-      <BarNav/>
+    <Router>
+      <div> {/* body */}
 
-      <div className="container-fluid text-center">
+        <BarNav />
 
-        <ItemListContainer sloganA={sloganB}/>
-        
+        <Switch>
+            <Route exact path="/">
+                <ItemListContainer sloganA={sloganB} />
+            </Route>
 
+            <Route exact path="/category/:id">
+                <ItemListContainer sloganA={sloganB} />
+            </Route>
+
+            <Route exact path="/detail/:id" component={ItemDetailContainer} />
+
+            <Route exact path="/cart" component={Cart} />
+                   
+        </Switch>
       </div>
-
-    </div>
-  );
-}
+    </Router> 
+  )}
 
 export default App;
