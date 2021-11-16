@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import {useState} from "react";
+import CambioBtn from './CambioBtn';
 
 function ItemCount({stock, initial}) {
 
@@ -25,13 +26,11 @@ function ItemCount({stock, initial}) {
                 <Button variant="primary" size="lg" onClick={sumar}>            
                     +
                 </Button>
-                    <span className="border border-1" style={{borderRadius: 4}}>{span}</span>
+                    <span className="border" style={{borderRadius: 4}}>{span}</span>
                 <Button variant="secondary" size="lg" onClick={restar}>
                     -
                 </Button>
-                <Button variant="success" size="lg" onClick={onAdd}>
-                    Agregar
-                </Button>
+                <CambioBtn onAdd={onAdd} />
             </div>
         </div>
     )
