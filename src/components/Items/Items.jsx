@@ -19,7 +19,7 @@ function Items({prod}) {
                     </Link>
                 </Card.Body>
             </Card>
-
+            
         </>
     )
 }
