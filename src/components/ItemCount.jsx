@@ -1,9 +1,13 @@
 import Button from 'react-bootstrap/Button';
 import {useState} from "react";
-import CambioBtn from './CambioBtn';
+import CambioBtn from './Bootstrap/CambioBtn';
+import { TercerBoton } from './Bootstrap/CambioBtn';
+
+
 
 function ItemCount({stock, initial}) {
 
+    const [boton3, setBoton3] = useState(true)
     const [span, setSpan] = useState(initial)
 
     const sumar = () => {
@@ -15,7 +19,7 @@ function ItemCount({stock, initial}) {
     }
 
     const onAdd = () => {
-        alert(`Agregaste ${span} productos.`)
+        setBoton3(false)    
     }
 
 
@@ -30,7 +34,9 @@ function ItemCount({stock, initial}) {
                 <Button variant="secondary" size="lg" onClick={restar}>
                     -
                 </Button>
-                <CambioBtn onAdd={onAdd} />
+                {
+                    boton3 ? <CambioBtn onAdd={onAdd} /> : <TercerBoton />
+                }
             </div>
         </div>
     )

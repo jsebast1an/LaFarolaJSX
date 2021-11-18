@@ -3,12 +3,13 @@ import ListGroupItem from "react-bootstrap/ListGroupItem"
 import ListGroup from "react-bootstrap/ListGroup"
 import Accordion from "react-bootstrap/Accordion"
 import ItemCount from "../ItemCount"
+import "./ItemDetail.css"
 
 function ItemDetail({items}) {
 
     return (
         <div className="container-sm py-3  text-center d-flex justify-content-evenly flex-wrap"  style={{borderRadius: 14}}>    
-            <Card className="m-3" data-aos="flip-right" style={{ width: '23rem' }}>
+            <Card className="m-3 hvr-glow" data-aos="flip-right" style={{ width: '23rem' }}>
                 <Card.Img variant="top" src={items.img} />
                 <Card.Body>
                     <Card.Title as="h3">{items.nombre}</Card.Title>
@@ -23,7 +24,7 @@ function ItemDetail({items}) {
                 </ListGroup>
             </Card>
 
-            <Card className="m-3" data-aos="flip-left"  style={{ width: '23rem' }}>
+            <Card className="m-3 hvr-glow" data-aos="flip-left"  style={{ width: '23rem' }}>
                 <Card.Header as="h3">DETALLES</Card.Header>
 
                 <Card.Body>

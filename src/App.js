@@ -7,15 +7,23 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { useEffect } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+/* AOS */
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
 
   let sloganB = <Slider />
   
+  useEffect(() => {
+    AOS.init();
+    },[]) 
+
   return (
     <Router>
       <div> {/* body */}

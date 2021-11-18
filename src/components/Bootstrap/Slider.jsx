@@ -9,7 +9,7 @@ function Slider() {
             <Figure>
             <Figure.Image
                 width={"auto"}
-                height={300}
+                max-height={109}
                 alt="171x180"
                 src={img}
 

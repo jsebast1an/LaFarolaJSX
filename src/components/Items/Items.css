@@ -1,5 +1,5 @@
 .itemsStyle {
-    transition: 0.25s; }
+    transition: 0.25s !important; } 
   
   .itemsStyle:hover {
-    transform: scale(1.05, 1.05); }
+    transform: scale(1.05, 1.05) !important; }

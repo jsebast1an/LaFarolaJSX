@@ -7,7 +7,7 @@ function Items({prod}) {
 
     return (
         <>  
-            <Card style={{ width: '22rem' }} className="my-3 itemsStyle">
+            <Card style={{ width: '22rem' }} data-aos="zoom-in-up" className="my-3 itemsStyle" >
                 <Card.Img variant="top" src={prod.img} alt="" width="400" height="300" />
 
                 <Card.Body>
