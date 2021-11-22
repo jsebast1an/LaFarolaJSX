@@ -7,7 +7,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { useEffect } from 'react';
+import { useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -15,6 +15,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 /* AOS */
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { CartContext } from './components/Context/CartContext';
+
 
 function App() {
 
@@ -25,8 +27,9 @@ function App() {
     },[]) 
 
   return (
+    <CartContext.Provider>
     <Router>
-      <div> {/* body */}
+      <> {/* body */}
 
         <BarNav />
 
@@ -44,8 +47,9 @@ function App() {
             <Route exact path="/cart" component={Cart} />
                    
         </Switch>
-      </div>
+      </>
     </Router> 
+    </CartContext.Provider>
   )}
 
 export default App;
