@@ -1,7 +1,9 @@
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import BarNav from './components/NavBar/BarNav';
 import Slider from './components/Bootstrap/Slider';
 import Cart from './components/NavBar/Cart';
+import CartContextProvider from './components/Context/CartContext';
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,11 +13,9 @@ import { useEffect} from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 /* AOS */
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { CartContext } from './components/Context/CartContext';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
     },[]) 
 
   return (
-    <CartContext.Provider>
+    <CartContextProvider>
     <Router>
       <> {/* body */}
 
@@ -49,7 +49,7 @@ function App() {
         </Switch>
       </>
     </Router> 
-    </CartContext.Provider>
+    </CartContextProvider>
   )}
 
 export default App;

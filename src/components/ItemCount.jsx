@@ -1,14 +1,18 @@
 import Button from 'react-bootstrap/Button';
-import {useState} from "react";
+import {useState, useContext} from "react";
 import CambioBtn from './Bootstrap/CambioBtn';
 import { TercerBoton } from './Bootstrap/CambioBtn';
+import { CartContext } from './Context/CartContext';
 
 
 
-function ItemCount({stock, initial}) {
+function ItemCount({stock, initial, item}) {
 
+    
     const [boton3, setBoton3] = useState(true)
     const [span, setSpan] = useState(initial)
+    
+    const {cartList, agregarAlCarrito} = useContext(CartContext)
 
     const sumar = () => {
         span < stock ? setSpan(span + 1) : alert("no hay más stock.")
@@ -20,8 +24,10 @@ function ItemCount({stock, initial}) {
 
     const onAdd = () => {
         setBoton3(false)    
+        agregarAlCarrito({...{item}, cantidad: span})
+        
     }
-
+     console.log(cartList)
 
     return (
         <div>
