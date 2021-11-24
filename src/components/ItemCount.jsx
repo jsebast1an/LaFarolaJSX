@@ -24,7 +24,7 @@ function ItemCount({stock, initial, item}) {
 
     const onAdd = () => {
         setBoton3(false)    
-        agregarAlCarrito({...{item}, cantidad: span})
+        agregarAlCarrito({...item, cantidad: span})
         
     }
      console.log(cartList)

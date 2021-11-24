@@ -1,7 +1,7 @@
 import Logo from "../imgs/adidas-9.svg"
-import Cart from './Cart';
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar"
+import CartWidget from "./CartWidget";
 
 function BarNav() {
     return (
@@ -48,9 +48,8 @@ function BarNav() {
                     </form>
                     </div>
 
-                    <div className="mx-3">
-                        <Cart/>
-                    </div>
+                    <CartWidget></CartWidget>
+
                 </div>
             </nav>
         </div>
