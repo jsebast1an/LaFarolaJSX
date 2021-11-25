@@ -9,12 +9,12 @@ function Cart() {
     console.log(cartList);
 
     return (
-        <div className="text-center container-fluid m-3">
-            <Table striped bordered hover variant="dark">
+        <div className="text-center container">
+            <Table striped bordered hover variant="dark" className="m-1">
                 <thead>
                     <tr>
                     <th>ID</th>
-                    <th>NAME</th>
+                    <th>name</th>
                     <th>#</th>
                     <th>PRICE</th>
                     </tr>

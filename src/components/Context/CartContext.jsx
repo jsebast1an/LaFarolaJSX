@@ -7,7 +7,14 @@ function CartContextProvider({children}) {
     const [cartList, setCartList] = useState([])
 
     function agregarAlCarrito (item) {
-            setCartList([...cartList, item])
+            const index = cartList.findIndex((i) => i.id === item.id)
+            
+            if (index > -1) {
+                cartList.splice(index, 1, item)
+            } else {
+                setCartList([...cartList, item])
+            }
+
     }
 
     return (
