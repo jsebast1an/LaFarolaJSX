@@ -20,11 +20,19 @@ function CartContextProvider({children}) {
         setCartList([])
     }
 
+    function borrarProducto (item) {
+        setCartList(cartList.filter((i) => i.id !== item));
+    }
+
+    const totalCarrito = cartList.reduce( (acc, item) => acc = acc + (item.precio * item.cantidad), 0)
+
     return (
         <CartContext.Provider value={{
             cartList,
             agregarAlCarrito,
-            borrarCarrito
+            borrarCarrito,
+            borrarProducto,
+            totalCarrito
         }}>
             {children}
         </CartContext.Provider>

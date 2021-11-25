@@ -7,7 +7,7 @@ import { BsTrashFill } from "react-icons/bs";
 
 function Cart() {
 
-    const {cartList, borrarCarrito} = useContext(CartContext)
+    const {cartList, borrarCarrito, borrarProducto, totalCarrito} = useContext(CartContext)
 
     console.log(cartList);
 
@@ -20,6 +20,7 @@ function Cart() {
                     <th>NAME</th>
                     <th>YEAR</th>
                     <th>PRICE</th>
+                    <th>-</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,11 +32,13 @@ function Cart() {
                                 <td>{prod.nombre}</td>
                                 <td>{prod.year}</td>
                                 <td>{prod.precio * prod.cantidad}</td>
+                                <td><Button variant="danger" onClick={() => {borrarProducto(prod.id);}} > <BsTrashFill /></Button></td>
                                 </tr>
                             )
                 }
                 </tbody>
             </Table>
+            <h4> Total: {totalCarrito} </h4>
             <Button variant="danger" onClick={borrarCarrito}>Empty cart <BsTrashFill /></Button>
         </div>
     )
