@@ -14,13 +14,17 @@ function CartContextProvider({children}) {
             } else {
                 setCartList([...cartList, item])
             }
+    }
 
+    function borrarCarrito () {
+        setCartList([])
     }
 
     return (
         <CartContext.Provider value={{
             cartList,
-            agregarAlCarrito
+            agregarAlCarrito,
+            borrarCarrito
         }}>
             {children}
         </CartContext.Provider>
