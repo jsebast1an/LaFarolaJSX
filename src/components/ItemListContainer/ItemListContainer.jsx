@@ -12,13 +12,22 @@ export const ItemListContainer = ({sloganA}) => {
     const { id } = useParams();
 
     useEffect(() => {
-
         const dataBase = getFirestore()
-        
-        dataBase.collection("items").get()
-        .then(res => setProducts(res.docs.map( prod => ({id: prod.id, ...prod.data() }))))
-        .catch(err => console.log(err))
-        .finally(setLoading(false))
+
+        if (id) {
+            dataBase.collection("items").where("type","==", id).get()
+            .then(res => setProducts(res.docs.map( prod => ({id: prod.id, ...prod.data() }))))
+            .catch(err => console.log(err))
+            .finally(setLoading(false))
+            
+        } else {
+            
+            dataBase.collection("items").get()
+            .then(res => setProducts(res.docs.map( prod => ({id: prod.id, ...prod.data() }))))
+            .catch(err => console.log(err))
+            .finally(setLoading(false))
+            
+        }
 
     }, [id])
 
