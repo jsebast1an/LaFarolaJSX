@@ -1,9 +1,9 @@
 import ItemList from "../ItemList/ItemList";
 import Spinner from "react-bootstrap/Spinner"
 import { useEffect, useState } from "react";
-import { getItems } from "../getItems";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css"
+import { getFirestore } from "../../services/getFirestore";
 
 export const ItemListContainer = ({sloganA}) => {
     const [products, setProducts] = useState([])
@@ -12,20 +12,21 @@ export const ItemListContainer = ({sloganA}) => {
     const { id } = useParams();
 
     useEffect(() => {
+        const dataBase = getFirestore()
 
         if (id) {
+            dataBase.collection("items").where("type","==", id).get()
+            .then(res => setProducts(res.docs.map( prod => ({id: prod.id, ...prod.data() }))))
+            .catch(err => console.log(err))
+            .finally(setLoading(false))
             
-            getItems
-            .then(res => {setProducts(res.filter(prod => prod.type === id))})
+        } else {
+            
+            dataBase.collection("items").get()
+            .then(res => setProducts(res.docs.map( prod => ({id: prod.id, ...prod.data() }))))
             .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-
-        } else{
-
-            getItems
-            .then(res => {setProducts(res)})
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
+            .finally(setLoading(false))
+            
         }
 
     }, [id])

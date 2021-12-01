@@ -9,7 +9,7 @@ export const productos = [
         detail:"la mejor ropa de la vida, no tienes que buscar más porque aca tenes lo que te hace feliz. Un buen estilo mas con la confortabilidad de salir sintiendo vos mismo.Esta ropa lo tiene todo.", 
         img: "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/16eaddcfedcb4b6cb8f0ac9300d39534_9366/Zapatillas_Forum_Plus_Blanco_FY5223_04_standard.jpg"
     },
-    {
+    {   
         id:2, 
         stock: 8, 
         type: "shoes", 
