@@ -1,6 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+
 
 export const CartContext = createContext([]);
+
+export const useCartContext = ()=>{
+    return useContext(CartContext)
+}
 
 function CartContextProvider({children}) {
 
@@ -26,13 +31,16 @@ function CartContextProvider({children}) {
 
     const totalCarrito = cartList.reduce( (acc, item) => acc = acc + (item.precio * item.cantidad), 0)
 
+    const cartCantidad = cartList.length
+
     return (
         <CartContext.Provider value={{
             cartList,
             agregarAlCarrito,
             borrarCarrito,
             borrarProducto,
-            totalCarrito
+            totalCarrito,
+            cartCantidad
         }}>
             {children}
         </CartContext.Provider>
