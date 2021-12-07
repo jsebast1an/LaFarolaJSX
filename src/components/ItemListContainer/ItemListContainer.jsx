@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css"
 import { getFirestore } from "../../services/getFirestore";
+import Slider from '../Bootstrap/Slider';
 
 export const ItemListContainer = ({sloganA}) => {
     const [products, setProducts] = useState([])
@@ -42,7 +43,7 @@ export const ItemListContainer = ({sloganA}) => {
                 : 
                 
                 <div>
-                        <h1>{sloganA}</h1>     
+                        <Slider /> 
                     <div>
                     
                         <ItemList 

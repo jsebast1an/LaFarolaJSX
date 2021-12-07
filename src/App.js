@@ -1,7 +1,6 @@
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import BarNav from './components/NavBar/BarNav';
-import Slider from './components/Bootstrap/Slider';
 import Cart from './components/NavBar/Cart';
 import CartContextProvider from './components/Context/CartContext';
 import {
@@ -20,7 +19,6 @@ import "aos/dist/aos.css";
 
 function App() {
 
-  let sloganB = <Slider />
   
   useEffect(() => {
     AOS.init();
@@ -35,11 +33,11 @@ function App() {
 
         <Switch>
             <Route exact path="/">
-                <ItemListContainer sloganA={sloganB} />
+                <ItemListContainer />
             </Route>
 
             <Route exact path="/category/:id">
-                <ItemListContainer sloganA={sloganB} />
+                <ItemListContainer />
             </Route>
 
             <Route exact path="/detail/:id" component={ItemDetailContainer} />

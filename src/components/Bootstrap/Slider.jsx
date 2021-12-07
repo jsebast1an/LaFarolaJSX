@@ -5,7 +5,7 @@ function Slider() {
     const img = "https://realsportantofagasta.cl/wp-content/uploads/2020/05/banner-adidas-principal12211221.jpg"
 
     return (
-        <div>
+        <div data-aos="fade-right">
             <Figure>
             <Figure.Image
                 width={"auto"}
